@@ -1,0 +1,26 @@
+# Versions as used for the reported runs. torch came from the NGC PyTorch
+# container (25.02, torch 2.7.0a0), so the pin below is the closest release.
+numpy==1.26.4
+scipy==1.17.1
+scikit-learn==1.5.2
+joblib==1.4.2
+tqdm==4.67.1
+
+# Neural methods: SiamBERT, RSP, CSS, MLSR, MStyleDistance
+torch==2.7.0
+transformers==4.53.2
+sentence-transformers
+peft                      # RSP backbone adapters
+
+# Tokenizing, tagging, readability
+spacy==3.7.5
+nltk==3.9.4
+textstat==0.7.13
+textcomplexity==0.11.0    # vocabulary richness for FeVec
+
+# LambdaG, including its Kneser-Ney language model
+LambdaG==0.1.1
+
+# Interpretable feature base of RSP
+elfen==1.3.3
+polars==1.14.0

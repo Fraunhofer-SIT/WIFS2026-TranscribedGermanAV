@@ -1,0 +1,69 @@
+# NOTICE
+
+Third party code and models used by this repository. Every method traces back to
+a publication, see `SETTINGS.md` for the citation and the settings.
+
+## Withheld method
+
+**StyloSpeaker** (Aggazzotti and Smith, https://github.com/caggazzotti/styloSpeaker)
+is evaluated in the paper but is not part of this repository. The upstream
+implementation carries no license, and our request to its authors for permission
+has gone unanswered. The German adaptation kept several of its feature functions
+close to verbatim, so redistributing it would require that permission. Until it
+is granted, the method is left out of the pipeline and its results are not
+published with this repository.
+
+## Vendored source
+
+**methods/dv/external/diff-vectors** is a partial copy of
+https://github.com/AlexMoreo/diff-vectors (Corbara, Moreo and Sebastiani).
+Six of the 28 Python files are included, byte for byte unchanged:
+`feature_extraction/author_vectorizer.py`, `model/pair_classification.py`,
+`model/pair_generator.py`, `utils/calibration.py`, `utils/common.py`,
+`utils/lightweight_random_indexing.py`. The remaining files are dataset
+fetchers, plotting and LaTeX table generators that this repository does not
+import, and they were removed. Nothing was modified. The German adaptation
+subclasses the upstream FeatureExtractor rather than editing it.
+
+**diff-vectors is licensed GPL-2.0.** Distributing it here makes this a combined
+work under section 2 of that license.
+
+## Derived source
+
+**methods/lambdag/custom_lambdag.py** is a copy of `lambdag.lambdag.LambdaGMethod`
+from LambdaG 0.1.1 (MIT), extended by an optional process pool and by
+`fit_predict`. The Kneser-Ney language model is imported from the package
+unchanged. https://pypi.org/project/LambdaG/#files
+
+**methods/coav**, **methods/mlsr**, **methods/mstyledistance** and
+**methods/meta** derive from an internal implementation that is not public.
+
+**methods/fevec** keeps the feature functions of the original implementation as
+close to verbatim as the German adaptation allows. License: Apache-2. Original source: https://github.com/janithnw/pan2021_authorship_verification.
+
+**methods/rsp** and **methods/css** are reimplementations from their papers, not
+forks. RSP shares no function with https://github.com/peterzeng/rsp, which
+carries no license. CSS has no public implementation.
+
+## Resources
+
+**methods/fevec/resources** holds the resource lists of the original
+implementation.
+
+## Models
+
+Downloaded at runtime, not part of this repository. What is distributed here is
+the model name, not the weights.
+
+- `deepset/gbert-large`, `deepset/gbert-base`
+- `Blablablab/multilingual-style-representation` (Kim, Zhang and Jurgens). The
+  model card names no license, and neither does their code repository, which this
+  repository does not use.
+- `StyleDistance/mstyledistance` (Qiu et al., MIT)
+- `rrivera1849/LUAR-MUD`, for `--lang en` only
+- spaCy `de_core_news_sm`, `en_core_web_sm`, `en_core_web_lg`
+
+## Masking
+
+The POSNoise condition was produced with the original implementation,
+https://github.com/Halvani/POSNoise.
