@@ -23,19 +23,17 @@ it is missing.
 Three domains, 50 speakers each, two videos per speaker, 300 videos in total.
 Each speaker contributes exactly two documents.
 
-**Splits.** The speakers of a domain are split 40/60 between train and test
-before any case is formed, so that no speaker appears in both. The verification
-cases are built within each split afterwards, which keeps the two corpora author
-disjoint. The 20 train speakers give 40 training cases and the 30 test speakers
-give 60 test cases. The larger test set leaves little training data and makes the
-task harder.
+**Verification cases.** Pairing a speaker's two documents gives a same-author
+case, which yields 50 Y cases per domain. For the different-author cases the
+speakers are randomly permuted and arranged in a ring. Each adjacent pair
+contributes one case, built from the first speaker's second document and the
+second speaker's first document, which yields 50 N cases. A domain therefore
+holds 100 cases, balanced between Y and N.
 
-**Verification cases.** Within a split, pairing a speaker's two documents gives a
-same-author case, one Y case per speaker. For the different-author cases the
-speakers of the split are randomly permuted and arranged in a ring; each adjacent
-pair contributes one case, built from the first speaker's first document and the
-second speaker's second document. Each split is therefore balanced between Y and
-N, 20 Y and 20 N in train and 30 Y and 30 N in test.
+**Splits.** The speakers are split 40/60 between train and test, so 20 speakers
+give 40 training cases and 30 speakers give 60 test cases, each balanced. The
+test set is the larger one, which leaves little training data and makes the task
+harder.
 
 
 ## Building them

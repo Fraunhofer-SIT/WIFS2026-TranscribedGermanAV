@@ -1,0 +1,394 @@
+# Quelle: POSNoise_PatternList_De_v3.0 (Halvani), safe patterns.
+# Automatisch extrahiert. Eine Eintragung pro Zeile, Zeilen mit '#' sind Kommentare.
+# 391 Mehrwort-Phrasen (alle Muster mit Leerzeichen)
+ab dem
+ab und an
+ab und zu
+aber auch
+abgesehen davon
+abgesehen von
+ach so
+all das was
+all und jeder
+allem anschein nach
+aller wahrscheinlichkeit nach
+alles in allem
+alles mögliche
+alles was
+allzu viele
+als auch
+als bald
+als beispielsweise
+als folge
+als konsequenz
+als ob
+als wenn
+als zb
+also gut
+am ende
+am ende von
+an sich
+anders ausgedrückt
+anders gesagt
+angenommen dass
+auf alle fälle
+auf dass
+auf daß
+auf der anderen seite
+auf der einen seite
+auf grund
+auf jeden fall
+aufs neue
+ausnahmslos alle
+ausser dass
+ausser wenn
+außer dass
+außer wenn
+bald bald
+bei alledem
+bei weitem
+beileibe nicht
+beste grüße
+besten dank
+beziehungsweise auch
+bis an
+bis auf
+bis zu
+bis zum
+bitte schön
+bitte sehr
+bloss dass
+bloß dass
+danke schön
+danke sehr
+dann und wann
+daraus ergibt sich
+daraus folgt
+darum herum
+darüber hinaus
+das da
+das eine oder andere
+das heisst
+das heißt
+das meinige
+das was
+davon abgesehen
+dem anschein nach
+dem vernehmen nach
+den berichten zufolge
+der da
+der eine oder andere
+der großteil
+der meinige
+der reihe nach
+der seinige
+des weiteren
+des öfteren
+dessen ungeachtet
+dich selbst
+die da
+die hälfte
+die mehrzahl
+die meinige
+die seinige
+dies und das
+doch auch
+drei viertel
+durch die bank
+durchaus nicht
+dürfte ich
+ebenso wie
+ehrlich gesagt
+ein bisschen
+ein drittel
+ein gewisser teil
+ein gewisses maß
+ein großteil
+ein großteil von
+ein gutteil
+ein halb
+ein jeder
+ein jeglicher
+ein jegliches
+ein klein wenig
+ein neuerliches mal
+ein stück weit
+ein ums andere mal
+ein viertel
+ein weiteres mal
+ein wenig
+eine art
+eine art von
+eine jede
+einigermaßen gut
+einzig und allein
+entschuldigen sie
+entweder oder
+es tut mir leid
+et cetera
+etliche male
+euch selbst
+falls nötig
+für gewöhnlich
+ganz bestimmt
+ganz gerne
+ganz im gegenteil
+ganz schön
+ganz sicher
+ganz und gar
+ganz und gar nicht
+ganz wie
+gar keine
+gar nicht
+genau wie
+genauso wie
+gern geschehen
+gesetzt den fall
+gleich wie
+grüß gott
+gut möglich
+herzlichen dank
+hie und da
+hier und da
+hieraus folgt
+hin und wieder
+im allgemeinen
+im endeffekt
+im ergebnis
+im falle dass
+im folgenden
+im gegensatz
+im gegensatz dazu
+im gegensatz zu
+im gegenteil
+im grossen und ganzen
+im großen und ganzen
+im grunde genommen
+im laufe von
+im notfall
+im prinzip
+im vergleich mit
+im vergleich zu
+im verlauf von
+im weiteren
+im wesentlichen
+im zweifel
+im zweifelsfall
+im übrigen
+immer mal wieder
+immer wieder
+immer wieder aufs neue
+in allen belangen
+in der art
+in der konsequenz
+in der regel
+in der tat
+in diesem zusammenhang
+in etwa
+in gewissem masse
+in gewissem maße
+in jedem fall
+in jeder hinsicht
+in keiner weise
+in keinster weise
+in vollem umfang
+irgendjemand anderes
+ja wohl
+je desto
+je nachdem
+je nachdem ob
+je umso
+jede menge
+jedes mal
+jemand anders
+kann sein
+kaum dass
+kein bisschen
+kein stück
+keine frage
+keine ursache
+keine zweifel
+keinen deut
+keinesfalls nicht
+klarer fall
+kurz gesagt
+kurz nach
+kurz vor
+letzten endes
+liebe grüsse
+liebe grüße
+mag sein
+mal mal
+man weiß nicht
+mehr noch
+mehr oder weniger
+mehr schlecht als recht
+meines erachtens
+mich selbst
+mit anderen worten
+mit ausnahme
+mit ausnahme von
+mit beginn
+mit freundlichen grüssen
+mit freundlichen grüßen
+mit hilfe
+mit sicherheit
+na gut
+na ja
+na klar
+na so was
+nach ablauf von
+nicht anders als
+nicht einmal
+nicht ganz
+nicht im geringsten
+nicht mehr
+nicht nur
+nicht nur sondern auch
+nicht so sehr als vielmehr
+nicht sonderlich
+nicht wahr
+nicht zuletzt
+nichts als
+nichts weiter als
+nichts zu danken
+nie mehr
+niemals mehr
+niemand sonst
+nirgends mehr
+noch einmal
+nun gut
+nun ja
+nun mal
+nur bedingt
+nur dass
+nur noch
+oder aber
+oder dergleichen
+oder so
+oder so was
+oder so ähnlich
+oder was auch immer
+oder was weiß ich
+offen gesagt
+ohne ausnahme
+ohne frage
+ohne weiteres
+ohne zweifel
+rein gar nichts
+samt und sonders
+schon allein
+sei es drum
+sei's drum
+seien sie so gut
+seit dem
+sich gegenseitig
+sich selbst
+sieht so aus
+so einigermaßen
+so etwa
+so gut wie
+so in etwa
+so lala
+so manche
+so richtig
+so wie
+so … wie
+sondern auch
+sonst nichts
+soviel ich weiß
+sowas in der art
+soweit ich weiß
+sowie auch
+sowohl als
+sowohl als auch
+sowohl wie auch
+teils teils
+trotz alledem
+trotz allem
+tut mir leid
+u a
+u. a.
+und der gleichen
+und dergleichen
+und so
+und so fort
+und so weiter
+und was nicht alles
+und ähnliches
+ungeachtet dessen
+uns selbst
+unter anderem
+unter der bedingung dass
+unter keinen umständen
+unter umständen
+unterm strich
+verglichen mit
+vermutlich auch
+viele grüße
+vielen dank
+vielleicht auch
+voll und ganz
+von neuem
+von zeit zu zeit
+vor ablauf von
+vor allem
+vorausgesetzt dass
+was auch immer
+was für
+was für ein
+was weiß ich
+weder noch
+weiter oben
+weiter unten
+welch ein
+wenn auch
+wenn ich bitten darf
+wenn nötig
+wenn schon
+wer auch immer
+wer weiß
+wie auch
+wie auch immer
+wie dem auch sei
+wie es heißt
+wie es scheint
+wie etwa
+wie folgt
+wie gesagt
+wie lange
+wie man hört
+wie oft
+wie verlautet
+wie viel
+wie viele
+wie wenn
+wie zum beispiel
+wieder und wieder
+wohl eher
+wären sie so freundlich
+z. b.
+zu beginn
+zu guter letzt
+zu hause
+zum abschluss
+zum anderen
+zum beispiel
+zum einen
+zum ersten
+zum schluss
+zum wiederholten mal
+zum wiederholten male
+zum x-ten mal
+zum zeitpunkt
+zum zweiten
+zur gänze
+zur hälfte
+zur zeit von
+zwar aber
+zwei drittel
+ähnlich wie
+über alle massen
+über alle maßen
+überhaupt nicht
+üblicher weise

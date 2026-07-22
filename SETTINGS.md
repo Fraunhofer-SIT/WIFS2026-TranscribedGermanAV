@@ -12,14 +12,14 @@ the implementation it is based on.
   runs are genuine independent repetitions. Reported is the **median-accuracy
   run**, a real row rather than a column-wise average. Ties are broken by the
   lower AUC. Where a method is stochastic, the section below names the source.
-- **Deterministic methods, one run is sufficient:** COAV, MLSR, MStyleDistance.
-  The two style models are frozen encoders whose threshold is set by EER, which
-  leaves nothing to vary between runs.
+- **Deterministic methods, one run is sufficient:** COAV, StyloSpeaker, MLSR,
+  MStyleDistance. The two style models are frozen encoders whose threshold is set
+  by EER, which leaves nothing to vary between runs.
 - Two threshold conventions are in use. COAV, MLSR and MStyleDistance set the
   decision threshold by **EER** on the training scores. The remaining methods
   calibrate on training accuracy or use the classifier's own 0.5.
-- Text length seen per method, relevant for comparability. COAV, LambdaG, DV and
-  FeVec see the full text. SiamBERT and RSP see 512-token
+- Text length seen per method, relevant for comparability. COAV, LambdaG, DV,
+  FeVec and StyloSpeaker see the full text. SiamBERT and RSP see 512-token
   windows, averaged. CSS, MLSR and MStyleDistance see only the first 512 tokens.
   In all three cases the truncation is the design decision of the respective
   authors, not an adaptation.
@@ -192,6 +192,61 @@ https://huggingface.co/StyleDistance/mstyledistance
 - Threshold: **EER**, our own choice, as for MLSR.
 - German adaptation: none. The multilinguality sits in the pre-trained encoder.
 - Determinism: deterministic, as for MLSR.
+
+---
+
+## STYLOSPEAKER
+
+Cristina Aggazzotti and Elizabeth Allyn Smith. A Stylometric Analysis of Speaker
+Attribution from Speech Transcripts. arXiv 2512.13667.
+https://github.com/caggazzotti/styloSpeaker
+
+- Approach: interpretable stylometry for verifying speakers in transcripts. Per
+  document, features on five linguistic levels are collected: character, word,
+  token, syntax and discourse. The two documents of a pair are joined by the
+  absolute difference of their feature vectors. A logistic regression decides.
+- Hyperparameters: tf-idf over character n-grams of length 3 to 6, over token
+  n-grams of length 1 to 3 and over POS n-grams of length 1 to 3. Each n-gram
+  block is capped at 2000 features and requires occurrence in at least ten
+  percent of the training documents. The remaining style features are
+  z-standardized. The logistic regression runs with at most 1000 iterations.
+- Choice of feature combination: the original compares concatenation, difference
+  and product of the feature vectors. Reported is the absolute difference, which
+  reaches the best AUC in the original. 
+- Determinism: the method has no stochastic component. Tf-idf, StandardScaler and
+  the lbfgs solver are deterministic, and the pairs come from the corpus
+  unchanged rather than being sampled. One run is exact and reproducible. The
+  seed only reaches `random_state` of the logistic regression, which lbfgs
+  ignores.
+- German adaptation: tokenization and POS tagging via the German spaCy model
+  de_core_news_sm instead of the English Stanza model. The UPOS tags used are
+  language neutral, so the POS features stay unchanged. The 390 English function
+  words and 69 function phrases are replaced by 1602 German single words and 391
+  German multi-word phrases. Both lists come from the German POSNoise pattern
+  list (v3.0) and match exactly the patterns our masking preserves, so the
+  function word block is computable under both conditions. The English
+  contractions are replaced by 34 German pairs, being fusions of preposition and
+  article as well as clitic short forms. Phrases and contractions are counted on
+  word boundaries, so that short function words are not counted inside longer
+  ones.
+- Readability: seven of the original's nine measures are kept unchanged. They are
+  computed with the German language setting, so that syllable counting follows
+  German hyphenation and the Flesch value corresponds to the German Amstad
+  adaptation. Dale-Chall and the count of difficult words are dropped, because
+  both require an English list of familiar words. textstat warns "There is no
+  easy words vocabulary for de, using english" and falls back to the English
+  3000-word list, so Dale-Chall does not react to the language setting at all and
+  reduces to sentence length, which is a feature in its own right anyway. The
+  syllable-based measures (SMOG, Flesch-Kincaid, Gunning-Fog, Linsear Write) are
+  kept: syllables are counted through Pyphen in the configured language, so the
+  measurement is correctly German. Their English constants do not matter for this
+  model, because an additive offset cancels exactly under the absolute difference
+  and the scale factor is absorbed by the StandardScaler and the regression
+  coefficient. Gunning-Fog internally consults the same word list, but it filters
+  no word at all on our texts.
+- Caveat: at about 8000 features and 40 training pairs the logistic regression
+  reaches a training accuracy of 1.000 on all corpora, while the test values lie
+  clearly below. The method overfits substantially.
 
 ---
 

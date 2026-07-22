@@ -2,7 +2,7 @@
 # Models and corpora that pip does not install. Run once after pip install.
 set -euo pipefail
 
-# de_core_news_lg for FeVec, sm for RSP, CSS and DV. FeVec tags
+# de_core_news_lg for FeVec, sm for StyloSpeaker, RSP, CSS and DV. FeVec tags
 # and parses with the large model, a smaller one changes its features.
 python -m spacy download de_core_news_lg   # 3.7.0 for the reported runs
 python -m spacy download de_core_news_sm   # 3.7.0

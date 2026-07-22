@@ -14,6 +14,7 @@ MAIN = [
     "css",
     "mlsr",
     "mstyledistance",
+    "stylospeaker",
     "rsp",
     "lambdag",
 ]
@@ -26,7 +27,7 @@ EXTRA = ["rsp_lora"]
 # No stochastic component, so a single run is exact and reproducible. The two
 # style models are frozen encoders scored against an EER threshold, which leaves
 # nothing to vary between runs.
-DETERMINISTIC = {"coav", "mlsr", "mstyledistance"}
+DETERMINISTIC = {"coav", "stylospeaker", "mlsr", "mstyledistance"}
 
 
 def build(name, seed=None, lang="de"):
@@ -78,6 +79,13 @@ def build(name, seed=None, lang="de"):
         from methods.mstyledistance.mstyledistance_method import MStyleDistance
 
         return MStyleDistance()
+
+    if name == "stylospeaker":
+        from methods.stylospeaker.stylospeaker_method import StyloSpeaker
+
+        # The original tags with Stanza; German goes through spaCy.
+        backend = "stanza" if lang == "en" else "spacy"
+        return StyloSpeaker(lang=lang, nlp_backend=backend)
 
     if name in ("rsp", "rsp_lora"):
         from methods.rsp.rsp_method import RSP

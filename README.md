@@ -1,12 +1,7 @@
 # Authorship Verification on German YouTube Transcripts
 
-Nine authorship verification methods, evaluated on German YouTube transcripts with
+Ten authorship verification methods, evaluated on German YouTube transcripts with
 and without POSNoise masking. This is the code behind the WIFS 2026 paper.
-
-A tenth method, StyloSpeaker, is reported in the paper but is not part of this
-repository. Its upstream implementation carries no license and the authors have
-not granted permission, so neither the adapted code nor its results are published
-here. See NOTICE for details.
 
 `SETTINGS.md` documents the configuration of every method, the German
 adaptations and the deviations from the original implementations.
@@ -25,7 +20,7 @@ needed for `--methods dv`:
 
 ## Run
 
-    python run.py                                                  # all nine methods
+    python run.py                                                  # all ten methods
     python run.py --methods coav,lambdag --topics math
     python run.py --methods css --masking posnoised --runs 3
 
@@ -38,7 +33,7 @@ caller, see `SETTINGS.md`.
 |---|---|
 | `--corpora` | `corpora` |
 | `--results` | `results` |
-| `--methods` | all of coav, siambert, fevec, dv, css, mlsr, mstyledistance, rsp, lambdag. Also available: rsp_lora |
+| `--methods` | all of coav, siambert, fevec, dv, css, mlsr, mstyledistance, stylospeaker, rsp, lambdag. Also available: rsp_lora |
 | `--masking` | `original,posnoised` |
 | `--topics` | all |
 | `--lang` | `de`, `en` selects the English variant where a method has one |

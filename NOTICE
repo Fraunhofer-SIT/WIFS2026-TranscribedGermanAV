@@ -3,16 +3,6 @@
 Third party code and models used by this repository. Every method traces back to
 a publication, see `SETTINGS.md` for the citation and the settings.
 
-## Withheld method
-
-**StyloSpeaker** (Aggazzotti and Smith, https://github.com/caggazzotti/styloSpeaker)
-is evaluated in the paper but is not part of this repository. The upstream
-implementation carries no license, and our request to its authors for permission
-has gone unanswered. The German adaptation kept several of its feature functions
-close to verbatim, so redistributing it would require that permission. Until it
-is granted, the method is left out of the pipeline and its results are not
-published with this repository.
-
 ## Vendored source
 
 **methods/dv/external/diff-vectors** is a partial copy of
@@ -38,6 +28,10 @@ unchanged. https://pypi.org/project/LambdaG/#files
 **methods/coav**, **methods/mlsr**, **methods/mstyledistance** and
 **methods/meta** derive from an internal implementation that is not public.
 
+**methods/stylospeaker** keeps the feature functions of
+https://github.com/caggazzotti/styloSpeaker as close to verbatim as the German
+adaptation allows. Four of them are identical. License: GPL v3.
+
 **methods/fevec** keeps the feature functions of the original implementation as
 close to verbatim as the German adaptation allows. License: Apache-2. Original source: https://github.com/janithnw/pan2021_authorship_verification.
 
@@ -47,8 +41,13 @@ carries no license. CSS has no public implementation.
 
 ## Resources
 
-**methods/fevec/resources** holds the resource lists of the original
-implementation.
+**methods/stylospeaker/resources/de** holds 1602 function words, 391 function
+phrases and 34 contraction pairs. The word and phrase lists are derived from the
+POSNoise pattern list for German, v3.0 (Halvani, Apache-2.0),
+https://github.com/Halvani/POSNoise
+
+**methods/stylospeaker/resources/en** and **methods/fevec/resources** are the
+resource lists of the original implementations.
 
 ## Models
 

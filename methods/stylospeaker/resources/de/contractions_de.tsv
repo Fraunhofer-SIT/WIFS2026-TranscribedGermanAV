@@ -1,0 +1,44 @@
+# Quelle: POSNoise_PatternList_De_v3.0 (Halvani), safe patterns.
+# Automatisch extrahiert. Eine Eintragung pro Zeile, Zeilen mit '#' sind Kommentare.
+
+# Kontraktionspaare: <kontrahiert>\t<ausgeschrieben>
+# Die kontrahierte Form stammt aus der POSNoise-Liste; die ausgeschriebene Form
+# ist NICHT in der Liste (POSNoise zerlegt sie) und wurde ergaenzt.
+# ACHTUNG: Auf POSNoise-maskiertem Text ist nur die kontrahierte Seite erhalten;
+# das Feature ist dort nicht interpretierbar (nur auf [Original] verwenden).
+# 24 Praeposition+Artikel-Verschmelzungen
+am	an dem
+ans	an das
+aufm	auf dem
+aufs	auf das
+beim	bei dem
+durchs	durch das
+fürs	für das
+gegens	gegen das
+hinterm	hinter dem
+hintern	hinter den
+hinters	hinter das
+im	in dem
+ins	in das
+ums	um das
+unterm	unter dem
+untern	unter den
+unters	unter das
+vom	von dem
+vorm	vor dem
+vors	vor das
+zum	zu dem
+zur	zu der
+überm	über dem
+übers	über das
+# 10 Apostroph-/Klitika-Formen
+'m	dem
+'n	ein
+'ne	eine
+'nem	einem
+'nen	einen
+'ner	einer
+'s	es
+hab's	habe es
+hat's	hat es
+war's	war es
