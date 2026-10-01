@@ -1,7 +1,7 @@
 # Authorship Verification on German YouTube Transcripts
 
 Ten authorship verification methods, evaluated on German YouTube transcripts with
-and without POSNoise masking. This is the code behind the WIFS 2026 paper.
+and without POSNoise masking. This is the code behind the paper under review.
 
 `SETTINGS.md` documents the configuration of every method, the German
 adaptations and the deviations from the original implementations.
