@@ -1,0 +1,14 @@
+Port of the approximate randomization test (Van Asch, art.py v3.0.3, 2013)
+to Python 3, applied by port_art.py to the files fetched from
+https://github.com/mikekestemont/ruzicka/tree/master/code/ruzicka
+The algorithm is unchanged. Mechanical changes:
+  print statements to print() calls
+  except X, e  to  except X as e
+  file mode 'rU' to 'r' with explicit encoding, .decode() on str removed
+  dict views wrapped in list() where indexed, data.keys()[0] to next(iter(data))
+  scoring.func_name to scoring.__name__
+  scipy.stats.binom_test to scipy.stats.binomtest(...).pvalue (sign test only)
+  the notice about a missing scipy import is suppressed
+Validation: the self-test values of the script header are reproduced
+(f1 0.014643, precision 0.97995, recall 0.00010204 at n = 1048576).
+
