@@ -40,6 +40,16 @@ caller, see `SETTINGS.md`.
 | `--runs` | 3, ignored for the deterministic methods |
 | `--seed` | unset |
 
+
+## Statistical analysis
+
+`analysis/significance` contains the scripts for the robustness analyses of
+the paper: per-case predictions, bootstrap confidence intervals, five repeated
+author-disjoint speaker splits per domain, cross-domain transfer and
+approximate randomization tests between methods and between splits. The
+outputs of the reported runs are in `results/robustness`. See
+`analysis/significance/README.md` for the workflow.
+
 ## Corpora
 
 Not part of this repository. `CORPORA.md` describes the layout and how the
