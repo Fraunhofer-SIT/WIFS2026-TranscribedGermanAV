@@ -41,14 +41,63 @@ caller, see `SETTINGS.md`.
 | `--seed` | unset |
 
 
-## Statistical analysis
+## Robustness analyses
 
-`analysis/significance` contains the scripts for the robustness analyses of
-the paper: per-case predictions, bootstrap confidence intervals, five repeated
-author-disjoint speaker splits per domain, cross-domain transfer and
-approximate randomization tests between methods and between splits. The
-outputs of the reported runs are in `results/robustness`. See
-`analysis/significance/README.md` for the workflow.
+`analysis/` holds the scripts behind the confidence intervals, repeated
+splits, cross-domain runs and significance tests of the paper. The approximate
+randomization test is the implementation of Van Asch used by the PAN 2014
+authorship verification overview. It is not part of this repository;
+`analysis/port_art.py` fetches the three files from
+https://github.com/mikekestemont/ruzicka, verifies their checksums and applies
+the Python 3 port in `analysis/art3.patch`.
+
+    python analysis/port_art.py
+
+`patched_run.py` is a drop-in replacement for `run.py` that also writes
+`predictions.csv` with one row per case (topic, masking, model, run, split,
+pair, y_true, y_pred, score). The corpus builders write symbolic links in the
+`run.py` layout. The analyses of the paper were produced as follows, with
+`<corpora>` the structured corpus tree of `CORPORA.md`.
+
+    A=analysis
+    python $A/make_cv_folds.py --src <corpora> --dst corpora_cv --seeds 42,43,44,45,46 --train-frac 0.4
+    python $A/make_cross_domain.py --src <corpora> --dst corpora_cross
+    python $A/patched_run.py --corpora corpora       --results results_main  --methods all --runs 1
+    python $A/patched_run.py --corpora corpora_cv    --results results_cv    --methods all --runs 1
+    python $A/patched_run.py --corpora corpora_cross --results results_cross --methods all --runs 1
+
+    python $A/bootstrap_ci.py --predictions results_main/predictions.csv --out bootstrap_ci.csv --B 1000 --seed 1
+    for base in dyi finanzen lehr-mathe; do for mask in original posnoised; do
+      for m in COAV CSS DV-Bin-DE FeVec-DE LambdaG MStyleDistance MultilingualStyleRepresentation RSP SiamBERT StyloSpeaker; do
+        python $A/run_art_table.py --predictions results_cv/predictions.csv --mode folds \
+            --base $base --model "$m" --masking $mask --r 1000 --seed 7 --out art_splits
+      done
+    done; done
+    for t in dyi finanzen lehr-mathe; do for mask in original posnoised; do
+      python $A/run_art_table.py --predictions results_main/predictions.csv --mode methods \
+          --corpus $t --masking $mask --r 1000 --seed 7 --exact-threshold 10 --out art_methods
+    done; done
+    python $A/summarize_splits.py --test-runs results_cv/test_runs.csv --art-dir art_splits --out splits_summary
+    python $A/make_cross_table.py --cross results_cross/test_runs.csv --main results_main/test_runs.csv --out cross_table
+
+Splits follow the construction of the published corpora: the speakers of a
+domain are shuffled with a fixed seed, one ring over the shuffled order defines
+the N-cases, and the train/test split cuts that order at 40 % of the speakers,
+so one N-case per side contains a document of a speaker from the other side.
+`--seeds 42 --train-frac 0.4` reproduces the published split. `--seed` fixes
+the shuffles of the test, `--r` their number, and `--exact-threshold` the
+number of differing predictions up to which the paired test enumerates all
+sign assignments (20 in the original, 10 keeps the all-method comparisons
+fast). Significance marks follow PAN 2014: `***` p < 0.001, `**` p < 0.01,
+`*` p < 0.05, `=` otherwise.
+
+Add to the "Layout" section:
+
+    analysis/           robustness analyses and significance tests
+
+Add to .gitignore:
+
+    analysis/art3/
 
 ## Corpora
 
