@@ -18,6 +18,15 @@ subclasses the upstream FeatureExtractor rather than editing it.
 **diff-vectors is licensed GPL-2.0.** Distributing it here makes this a combined
 work under section 2 of that license.
 
+**analysis/significance/art3** contains `art.py`, `confusionmatrix.py` and
+`combinations.py` by Vincent Van Asch (CLiPS, 2013, v3.0.3) as distributed in
+https://github.com/mikekestemont/ruzicka (code/ruzicka/), the implementation
+of the approximate randomization test used by the PAN 2014 authorship
+verification overview. The files carry a GNU General Public License notice in
+their headers. They were ported from Python 2 to Python 3 without changes to
+the algorith The mechanical changes are listed in
+`analysis/significance/art3/PORTING_NOTES.md`.
+
 ## Derived source
 
 **methods/lambdag/custom_lambdag.py** is a copy of `lambdag.lambdag.LambdaGMethod`
